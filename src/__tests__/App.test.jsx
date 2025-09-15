@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, within } from "@testing-library/react";
-import App from "../App";
+import App from "../components/App";
+
 
 describe("Hog App", () => {
   it("renders the app header", () => {

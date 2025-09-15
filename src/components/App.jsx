@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Nav from "./components/Nav";
-import HogCard from "./components/HogCard";
-import HogForm from "./components/HogForm";
-import FilterSortBar from "./components/FilterSortBar";
-import hogs from "./porkers_data";
+import Nav from "./Nav";
+import HogCard from "./HogCard";
+import HogForm from "./HogForm";
+import FilterSortBar from "./FilterSortBar";
+import hogs from "../porkers_data";
 
 function App() {
   const [hogList, setHogList] = useState(hogs);
