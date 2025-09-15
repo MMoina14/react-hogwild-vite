@@ -20,7 +20,12 @@ function HogForm({ onAddHog }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAddHog({ ...formData, weight: parseFloat(formData.weight) });
+    onAddHog({
+      ...formData,
+      weight: parseFloat(formData.weight) || 0  
+    });
+
+    
     setFormData({
       name: "",
       image: "",
@@ -47,15 +52,32 @@ function HogForm({ onAddHog }) {
       </div>
       <div className="field">
         <label htmlFor="weight">Weight:</label>
-        <input id="weight" name="weight" type="number" value={formData.weight} onChange={handleChange} />
+        <input
+          id="weight"
+          name="weight"
+          type="number"
+          value={formData.weight}
+          onChange={handleChange}
+        />
       </div>
       <div className="field">
-        <label htmlFor="greased">Greased?</label> {        }
-        <input id="greased" name="greased" type="checkbox" checked={formData.greased} onChange={handleChange} />
+        <label htmlFor="greased">Greased?</label>
+        <input
+          id="greased"
+          name="greased"
+          type="checkbox"
+          checked={formData.greased}
+          onChange={handleChange}
+        />
       </div>
       <div className="field">
         <label htmlFor="highest medal achieved">Highest Medal Achieved:</label>
-        <input id="highest medal achieved" name="highest medal achieved" value={formData["highest medal achieved"]} onChange={handleChange} />
+        <input
+          id="highest medal achieved"
+          name="highest medal achieved"
+          value={formData["highest medal achieved"]}
+          onChange={handleChange}
+        />
       </div>
       <button className="ui button" type="submit">Add Hog</button>
     </form>
