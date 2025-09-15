@@ -4,7 +4,9 @@ function HogCard({ hog, onHide }) {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="ui card" onClick={() => setShowDetails(!showDetails)}>
+    <div className="ui card" 
+        aria-label="hog card" 
+        onClick={() => setShowDetails(!showDetails)}>
       <div className="image">
         <img
           src={hog.image || "https://via.placeholder.com/150"}
@@ -21,11 +23,13 @@ function HogCard({ hog, onHide }) {
             <p>Highest Medal Achieved: {hog["highest medal achieved"] || "None"}</p>
           </>
         )}
-        <button className="ui button" onClick={(e) => {
-          e.stopPropagation(); 
-          onHide();
+        <button 
+          className="ui button" 
+          onClick={(e) => {
+            e.stopPropagation(); 
+            onHide();
         }}>
-          Hide
+          Hide Me
         </button>
       </div>
     </div>
